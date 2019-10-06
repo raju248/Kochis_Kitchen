@@ -123,7 +123,7 @@ include 'contactus_sql.php';
 
                 <div class="row justify-content-center" style="margin-top : 30px;">
                     <div class="col-6">
-                        <button class="btn btn-message" style="width: 100%; font-size:20px;" type="submit">Sign Up</button>
+                        <button class="btn btn-message" style="width: 100%; font-size:20px;" type="submit">Send Message</button>
                     </div>
                 </div>
 

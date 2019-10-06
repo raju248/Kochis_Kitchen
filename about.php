@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 
 ?>
 
@@ -42,9 +42,9 @@
 
 
     <section class="about-content layer">
-        <div class="container">
+        <div class="container  justify-content-center justify-content-sm-between justify-content-md-between">
             <!-- <h2 class="display-4 recipe-section-title text-center">About Us</h2> -->
-<h2 class="display-4 about-section-title text-center px-5">Meet the team</h2>
+            <h2 class="display-4 about-section-title text-center px-5">Meet the team</h2>
             <div class="about-us-intro">
 
                 <p class="display-4 text-center">
@@ -54,11 +54,11 @@
             </div>
 
 
-            
+
 
             <div class="row justify-content-center">
 
-                <div class="col-6 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 mb-3 text-center">
 
                     <div class="about-us-card">
                         <img src="images/1r.jpg" class="about-us-member-image">
@@ -80,7 +80,7 @@
 
                 </div>
 
-                <div class="col-6 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 mb-3 text-center">
 
                     <div class="about-us-card">
                         <img src="images/1m.jpg" class="about-us-member-image">

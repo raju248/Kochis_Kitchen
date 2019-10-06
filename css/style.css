@@ -150,7 +150,7 @@ a:hover {
 }
 
 .layer3 {
-  background-color: rgba(103, 181, 196, 0.45);
+  background-color: rgba(1, 24, 29, 0.45) !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -520,6 +520,16 @@ li a {
   .footer-section-title {
     font-size: 1rem;
   }
+  .member-social {
+    margin-top: -10px;
+    font-size: 0.5rem;
+}
+  .about-us-member-info {
+    height: 100%;
+    font-size: 1.1rem;
+    font-weight: 600 !important;
+}
+
   .display-4 {
     font-size: 7.5vw !important;
     font-weight: 300;
@@ -558,6 +568,15 @@ li a {
     font-size: 9vw !important;
     font-family: 'Pacifico', cursive;
   }
+  .about-us-member-info {
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: 600 !important;
+}
+.member-social {
+  margin-top: -10px;
+  font-size: 1.2vw;
+}
   .display-4 {
     font-size: 6.5vw !important;
     font-weight: 300;
@@ -600,6 +619,17 @@ li a {
   .copyright {
     font-size: 1.5vw;
   }
+  .about-us-member-info {
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: 600 !important;
+}
+
+.member-social {
+  margin-top: -10px;
+  font-size: 0.7rem;
+}
+
 }
 
 /* Large devices (desktops, 992px and up) */
