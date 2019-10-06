@@ -61,7 +61,7 @@ $resultSet = '';
 
         <div class="container text-center justify-content-center justify-content-sm-between justify-content-md-between">
 
-            <div class="row mb-1 p-1">
+            <div class="row mb-1 p-3">
                 <h2 class="display-4 recipe-section-title">Dessert Recipes</h2>
             </div>
 
