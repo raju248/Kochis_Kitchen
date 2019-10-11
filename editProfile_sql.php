@@ -28,7 +28,7 @@ if (!empty($_POST)) {
 
     //print_r($_POST);
 
-    $sql = 'select * from users where PhoneNo = ' . $phoneNo;
+    $sql = 'select * from users where PhoneNo = ' . $phoneNoNew;
 
     $result = mysqli_query($link, $sql);
 
