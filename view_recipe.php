@@ -57,13 +57,13 @@ if (isset($_GET['id'])) {
 
             <div class="row">
 
-                <div class="col-lg-8 col-md-7 col-sm-12 ">
+                <div class="col-lg-8 col-md-12 col-sm-12 ">
 
                     <?php
                     $row = mysqli_fetch_assoc($result); {
                         ?>
 
-                        <div class="block-layer mb-3">
+                        <div  class="block-layer mb-3">
                             <div class="recipe-media ">
                                 <img src="<?php echo $row["DishPhoto"]; ?>" alt="" class="recipe-img-top" style="width: 100%">
                             </div>
@@ -84,10 +84,10 @@ if (isset($_GET['id'])) {
                                         <ul>
                                             <?php
                                                 //  echo str_replace(".", ".<br>",$row["Steps"]);
-                                                $stringArray2 = str_replace(",\n", "<br>", $row["Ingredients"]);
-                                                $stringArray1 = explode("\n", $stringArray2);
+                                                $stringArray2 = str_replace(",\n", "\n", $row["Ingredients"]);
+                                                $stringArray1 = explode(",", $row["Ingredients"]);
                                                 $finalString1 = array_filter($stringArray1);
-                                                //print_r($stringArray);
+                                                //print_r($stringArray1);
 
                                                 foreach ($finalString1 as $key => $value) {
 
@@ -95,7 +95,7 @@ if (isset($_GET['id'])) {
                                                     ?>
 
                                                 <li>
-                                                    <?php if (!empty($value)) echo $value; ?>
+                                                    <?php if (!empty($value) && strcmp($value,"")!=0) echo $value; ?>
                                                 </li>
 
                                             <?php
@@ -118,13 +118,18 @@ if (isset($_GET['id'])) {
                                                 $finalString = array_filter($stringArray);
                                                 //print_r($stringArray);
 
-                                                foreach ($finalString as $key => $value) {
+                                                $i = 0;
 
+                                                foreach ($finalString as $key => $value) {
+                                                    $i++;
 
                                                     ?>
 
-                                                <li>
-                                                    <?php if (!empty($value)) echo $value; ?>
+                                                <li class="custom-control custom-checkbox mb-1">
+                                                    <div class="">
+                                                        <input type="checkbox" class="custom-control-input" id="<?php echo "customCheck" . $i; ?>" name="example1">
+                                                        <label class="custom-control-label" for="<?php echo "customCheck" . $i; ?>"> <?php if (!empty($value)) echo $value; ?></label>
+                                                    </div>
                                                 </li>
 
                                             <?php
@@ -146,91 +151,97 @@ if (isset($_GET['id'])) {
 
                 <!-- SELECT * FROM (select * from recipes where id <> 3) e order by rand() limit 2 -->
 
-                <div class="col-lg-4 col-md-5 col-sm-12">
-                    <div class="block-layer p-3 mb-4">
-                        <ul class="list-unstyled">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="container">
+                        <div class="row">
 
-                            <li class="mb-5  border-secondary">
-                                <div> <span><i class="fas fa-user-shield"></i></span> Recipe By :
+                            <div class="col-lg-12 col-md-6 col-sm-7 col-12 p-0">
+                                <div id="info-block" class="block-layer p-3 mb-4">
+                                    <ul class="list-unstyled">
 
-                                    <span class="float-right"> Admin </span></div>
-                            </li>
+                                        <li class="mb-5 border-secondary">
+                                            <div> <span><i class="fas fa-user-shield"></i></span> Recipe By :
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div><span><i class="fas fa-clock"></i></span> Preparation Time :
-                                    <span class="float-right"> <?php echo $row["PreparationTime"]; ?> </span></div>
-                            </li>
+                                                <span class="float-right"> Admin </span></div>
+                                        </li>
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div> <span><i class="fas fa-clock"></i></span> Cooking Time :
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div><span><i class="fas fa-clock"></i></span> Preparation Time :
+                                                <span class="float-right"> <?php echo $row["PreparationTime"]; ?> </span></div>
+                                        </li>
 
-                                    <span class="float-right"> <?php echo $row["CookingTime"]; ?> </span></div>
-                            </li>
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div> <span><i class="fas fa-clock"></i></span> Cooking Time :
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div><span><i class="fas fa-users"></i></span> Max Serivgs :
+                                                <span class="float-right"> <?php echo $row["CookingTime"]; ?> </span></div>
+                                        </li>
 
-                                    <span class="float-right"> <?php echo $row["Servings"]; ?> </span></div>
-                            </li>
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div><span><i class="fas fa-users"></i></span> Max Serivgs :
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div> <span><i class="fas fa-cookie-bite"></i></span> Cuisine :
+                                                <span class="float-right"> <?php echo $row["Servings"]; ?> </span></div>
+                                        </li>
 
-                                    <span class="float-right"> <?php echo $row["Cuisine"]; ?> </span></div>
-                            </li>
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div> <span><i class="fas fa-cookie-bite"></i></span> Cuisine :
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div><span><i class="fas fa-sort-alpha-down"></i></span> Category :
+                                                <span class="float-right"> <?php echo $row["Cuisine"]; ?> </span></div>
+                                        </li>
 
-                                    <span class="float-right"> <?php echo $row["Type"]; ?> </span></div>
-                            </li>
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div><span><i class="fas fa-sort-alpha-down"></i></span> Category :
 
-                            <li class="mb-2 border-bottom border-secondary">
-                                <div><span><i class="fas fa-folder-plus"></i></span> Created :
+                                                <span class="float-right"> <?php echo $row["Type"]; ?> </span></div>
+                                        </li>
+
+                                        <li class="mb-2 border-bottom border-secondary">
+                                            <div><span><i class="fas fa-folder-plus"></i></span> Created :
+
+                                                <?php
+                                                    $parent = $row['CreatedDate'];
+
+                                                    $timestamp = strtotime($parent);
+
+                                                    $date = date('d-F-Y', $timestamp);
+                                                    $time = date('H:i a', $timestamp);
+
+
+
+                                                    //echo $diff->days;
+
+                                                    ?>
+
+                                                <span class="float-right"> <?php echo $date; ?> </span></div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            <?php
+                            }
+                            ?>
+
+                            </div>
+
+                            <div class="col-lg-12 col-md-6 col-sm-5 col-12 p-0">
+                                <div id="also-see-block" class="block-layer p-3">
+                                    <div class="check-wrapper ">
+                                        <div class="check-new">
+                                            <h4>Also check</h4>
+                                        </div>
+                                    </div>
 
                                     <?php
-                                        $parent = $row['CreatedDate'];
+                                    $sql = "select * from (select * from recipes where ID <> " . $_GET['id'] . " and Type <> \"Chef's Special\") e order by rand() limit 2";
 
-                                        $timestamp = strtotime($parent);
+                                    $result = mysqli_query($link, $sql); ?>
 
-                                        $date = date('d-F-Y', $timestamp);
-                                        $time = date('H:i a', $timestamp);
+                                    <ul class="list-unstyled">
+                                        <?php
+                                        while ($row = mysqli_fetch_assoc($result)) {
 
-
-
-                                        //echo $diff->days;
-
-                                        ?>
-
-                                    <span class="float-right"> <?php echo $date; ?> </span></div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                <?php
-                }
-                ?>
-
-                <div class="block-layer p-3">
-                    <div class="check-wrapper ">
-                        <div class="check-new">
-                            <h4>Also check</h4>
-                        </div>
-                    </div>
-
-                    <?php
-                    $sql = "select * from (select * from recipes where ID <> " . $_GET['id'] . " and Type <> \"Chef's Special\") e order by rand() limit 2";
-
-                    $result = mysqli_query($link, $sql); ?>
-
-                    <ul class="list-unstyled">
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-
-                            ?>
-                            <li class="border-bottom border-light mb-2">
-                                <!-- <div class="new-suggestion">
+                                            ?>
+                                            <li class="border-bottom border-light mb-2">
+                                                <!-- <div class="new-suggestion">
                                     <div class="suggestion-image mb-1">
                                         <img src="<?php echo $row['DishPhoto']; ?>" alt="" style="width:100%;">
                                     </div>
@@ -240,25 +251,33 @@ if (isset($_GET['id'])) {
                                         </a>
                                     </div>
                                 </div> -->
-                                <div class="card" style="width: 100%;">
-                                    <div class="recipe-media">
-                                    <img class="recipe-img-top" src="<?php echo $row['DishPhoto']; ?>" style="width:100%;" alt="Card image cap">
-                                    </div>
-                                    <div class="mini-card-body p-1 text-center">
-                                        <a href="view_recipe.php?id=<?php echo $row['ID']; ?>" class="">
+                                                <div class="card" style="width: 100%;">
+                                                    <div class="recipe-media">
+                                                        <img class="recipe-img-top" src="<?php echo $row['DishPhoto']; ?>" style="width:100%;" alt="Card image cap">
+                                                    </div>
+                                                    <div class="mini-card-body p-1 text-center">
+                                                        <a href="view_recipe.php?id=<?php echo $row['ID']; ?>" class="">
 
-                                            <p class="card-text mini-card-title"><?php echo $row['RecipeName']; ?>
-                                            </p>
-                                        </a>
-                                    </div>
+                                                            <p class="card-text mini-card-title"><?php echo $row['RecipeName']; ?>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        <?php
+                                        }
+                                        ?>
+                                    </ul>
                                 </div>
-                            </li>
+                            </div>
 
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </div>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
 
             </div>

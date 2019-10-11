@@ -52,7 +52,7 @@ mysqli_close($link);
 
     <section class="content" style="margin-top: 200px;">
 
-        <div class="container">
+        <div class="container mb-5">
 
             <div class="row">
 

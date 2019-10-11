@@ -59,14 +59,14 @@ $resultSet = '';
 
     <section class="bb-content">
 
-        <div class="container text-center justify-content-center justify-content-sm-between justify-content-md-between">
+        <div class="layer3 container text-center justify-content-center justify-content-sm-between justify-content-md-between ">
 
             <div class="row mb-1 p-3">
                 <h2 class="display-4 recipe-section-title">Breakfast and Brunch</h2>
             </div>
 
 
-            <div class="row">
+            <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-start">
 
                 <?php
 

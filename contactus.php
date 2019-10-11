@@ -79,7 +79,7 @@ include 'contactus_sql.php';
                         <div class="form-row">
                             <div class=" col-md-12 mb-3 justify-content-center">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" value="<?php echo htmlspecialchars($name) ?>" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?php echo htmlspecialchars($name) ?>" required>
                                 <div class="validation-error-red">
                                     <?php echo "<p>" . $nameErr . "</p>"; ?>
                                 </div>
@@ -93,10 +93,8 @@ include 'contactus_sql.php';
                         <div class="form-row">
                             <div class="col-md-12 mb-3 justify-content-center">
                                 <label for="phoneNo">Phone No.</label>
-                                <input type="tel" class="form-control " id="phoneNo" pattern="^\d{11}" name="phoneNo" placeholder="Phone No" required title="Phone no must be 11 digits long" value="<?php echo htmlspecialchars($phoneNo) ?>">
-                                <div class="validation-error-red">
-                                    <?php echo "<p>" . $phoneNoErr . "</p>"; ?>
-                                </div>
+                                <input type="tel" class="form-control " required id="phoneNo" pattern="^\d{11}" name="phoneNo" placeholder="Phone No" required title="Phone no must be 11 digits long" value="<?php echo htmlspecialchars($phoneNo) ?>">
+                                
                             </div>
 
                         </div>
@@ -111,9 +109,7 @@ include 'contactus_sql.php';
                             <div class="col-md-12 mb-3 justify-content-center">
                                 <label for="message">Message</label>
                                 <textarea class="form-control rounded-0" id="message" name="message" rows="3" value="<?php echo htmlspecialchars($message) ?>" required></textarea>
-                                <div class="validation-error-red">
-                                    <?php echo "<p>" . $messageErr . "</p>"; ?>
-                                </div>
+                                
                             </div>
                         </div>
 

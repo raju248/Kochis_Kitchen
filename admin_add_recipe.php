@@ -158,12 +158,23 @@ if (isset($_POST["submit"])) {
                 </div>
             </div>
 
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3 justify-content-center">
+                            <label for="Description">Short Description</label>
+                            <textarea class="form-control rounded-0" id="Description" name="Description" placeholder="Description" rows="3" value="<?php echo $description; ?>" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="row justify-content-center">
                 <div class="col-6">
                     <div class="form-row">
                         <div class=" col-md-12 mb-3 justify-content-center">
-                            <label for="Ingredients">Ingredients (separate usign comma ( , ))</label>
+                            <label for="Ingredients">Ingredients (separate usign comma ( ,) or new line) </label>
                             <!-- <input type="text" class="form-control" id="Ingredients" name="Ingredients" placeholder="Ingredients" pattern="^[A-Za-z][A-Za-z0-9!@#$%^&* ]*$" value="<?php echo $ingredients; ?>" required> -->
 
                             <textarea class="form-control rounded-0" id="Ingredients" name="Ingredients" pattern="^[A-Za-z][A-Za-z0-9!@#$%^&* ]*$" placeholder="Ingredients" rows="3" value="<?php echo $ingredients; ?>" required></textarea>
@@ -211,17 +222,6 @@ if (isset($_POST["submit"])) {
                 <div class="col-6">
                     <div class="form-row">
                         <div class="col-md-12 mb-3 justify-content-center">
-                            <label for="Description">Description</label>
-                            <textarea class="form-control rounded-0" id="Description" name="Description" placeholder="Description" rows="3" value="<?php echo $description; ?>" required></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <div class="form-row">
-                        <div class="col-md-12 mb-3 justify-content-center">
                             <label for="CookingSteps">Cooking Steps</label>
                             <textarea class="form-control rounded-0" id="CookingSteps" name="CookingSteps" pattern="^[A-Za-z][A-Za-z0-9!@#$%^&* ]*$" placeholder="CookingSteps" rows="3" value="<?php echo $steps; ?>" required></textarea>
                         </div>
@@ -239,6 +239,9 @@ if (isset($_POST["submit"])) {
                                 <option <?php if(strcmp($type,"Breakfast and Brunch")==0) echo 'selected'; ?> value="Breakfast and Brunch">Breakfast and Brunch</option>
                                 <option <?php if(strcmp($type,"Dessert")==0) echo 'selected'; ?> value="Dessert">Dessert</option>
                                 <option <?php if(strcmp($type,"Chef's Special")==0) echo 'selected'; ?> value="Chef's Special">Chef's Special</option>
+                                <option <?php if(strcmp($type,"Lunch")==0) echo 'selected'; ?> value="Lunch">Lunch</option>
+                                <option <?php if(strcmp($type,"Dinner")==0) echo 'selected'; ?> value="Dinner">Dinner</option>
+                                
                             </select>
                         </div>
                     </div>

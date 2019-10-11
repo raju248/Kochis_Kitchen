@@ -60,17 +60,17 @@ session_start();
 
                 <div class="col-lg-6 col-md-6 col-sm-8 col-8 mb-3 text-center">
 
-                    <div class="about-us-card">
+                    <div class="about-us-card ">
                         <img src="images/1r.jpg" class="about-us-member-image">
 
                         <div class="about-us-member-info pt-2 pb-1 px-4">
-                            <p class="m-0">Md Shah Faisal Raju</p>
+                            <p class="mb-3">Md Shah Faisal Raju</p>
                         </div>
-
-                        <div class="member-social pb-2 px-4">
+ 
+                        <div class="member-social pb-2 text-center ">
                             <a href="#"><i class="fab fa-facebook-f fa-2x mr-3 footer-social-info"></i></a>
                             <a href="#"><i class="fab fa-pinterest fa-2x mr-3 footer-social-info"></i></a>
-                            <a href="#"><i class="fab fa-twitter fa-2x mr-3 footer-social-info"></i></a>
+                            <a href="#"><i class="fab fa-twitter fa-2x mr-3 footer-social-info mb-3"></i></a>
                             <a href="#"><i class="fab fa-linkedin fa-2x mr-3 footer-social-info"></i></a>
 
                         </div>
@@ -82,17 +82,18 @@ session_start();
 
                 <div class="col-lg-6 col-md-6 col-sm-8 col-8 mb-3 text-center">
 
-                    <div class="about-us-card">
+                   
+                    <div class="about-us-card ">
                         <img src="images/1m.jpg" class="about-us-member-image">
 
                         <div class="about-us-member-info pt-2 pb-1 px-4">
-                            <p class="m-0">Mahmudul Hasan Mahi</p>
+                            <p class="mb-3">Mahmudul Hasan Mahi</p>
                         </div>
 
-                        <div class="member-social pb-2 px-4">
+                        <div class="member-social pb-2  text-center">
                             <a href="#"><i class="fab fa-facebook-f fa-2x mr-3 footer-social-info"></i></a>
                             <a href="#"><i class="fab fa-pinterest fa-2x mr-3 footer-social-info"></i></a>
-                            <a href="#"><i class="fab fa-twitter fa-2x mr-3 footer-social-info"></i></a>
+                            <a href="#"><i class="fab fa-twitter fa-2x mr-3 footer-social-info mb-3"></i></a>
                             <a href="#"><i class="fab fa-linkedin fa-2x mr-3 footer-social-info"></i></a>
 
                         </div>
@@ -100,7 +101,7 @@ session_start();
                     </div>
 
 
-                </div>
+            
 
             </div>
 

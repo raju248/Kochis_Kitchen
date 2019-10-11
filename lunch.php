@@ -6,13 +6,13 @@ include 'dbConnect.php';
 $resultSet = '';
 
 
-    $sql = "select * from recipes where Type = \"Dessert\" order by CreatedDate desc";
+$sql = "select * from recipes where Type = \"Lunch\" order by CreatedDate desc";
 
-    $resultSet = mysqli_query($link, $sql);
+$resultSet = mysqli_query($link, $sql);
 
-    $rowNum = mysqli_num_rows($resultSet);
+$rowNum = mysqli_num_rows($resultSet);
 
-    mysqli_close($link);
+mysqli_close($link);
 
 
 ?>
@@ -57,16 +57,18 @@ $resultSet = '';
 
     </section>
 
-    <section class="dessert-content">
+    <section class="lunch-content">
 
-        <div class="layer3 container text-center justify-content-center justify-content-sm-between justify-content-md-between">
 
-            <div class="row mb-1 p-3">
-                <h2 class="display-4 recipe-section-title">Dessert Recipes</h2>
+
+        <div class=" layer3 container text-center justify-content-center justify-content-sm-start justify-content-md-between">
+
+            <div class="row  mb-1 p-3 ">
+                <h2 class="display-4 recipe-section-title">Lunch Recipes</h2>
             </div>
 
 
-            <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-start">
+            <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-start">
 
                 <?php
 
@@ -74,7 +76,7 @@ $resultSet = '';
                     ?>
                     <?php
                         include 'card_temp.php';
-                    ?>
+                        ?>
                 <?php
                 }
                 ?>
@@ -82,6 +84,8 @@ $resultSet = '';
             </div>
 
         </div>
+
+
 
 
 
@@ -96,28 +100,31 @@ $resultSet = '';
 
     </section>
 
-      <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"> </script>
-  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"> </script>
 
-  <script>  $(document).ready(function() {
- // executes when HTML-Document is loaded and DOM is ready
-console.log("document is ready");
-  
 
-  $( ".card" ).hover(
-  function() {
-    $(this).addClass('shadow-lg1').css('cursor', 'pointer'); 
-  }, function() {
-    $(this).removeClass('shadow-lg1');
-  }
-);
-  
-// document ready  
-});</script>
+    <script>
+        $(document).ready(function() {
+            // executes when HTML-Document is loaded and DOM is ready
+            console.log("document is ready");
+
+
+            $(".card").hover(
+                function() {
+                    $(this).addClass('shadow-lg1').css('cursor', 'pointer');
+                },
+                function() {
+                    $(this).removeClass('shadow-lg1');
+                }
+            );
+
+            // document ready  
+        });
+    </script>
 
 
 </body>

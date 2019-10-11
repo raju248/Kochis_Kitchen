@@ -4,7 +4,7 @@ session_start();
 include 'dbConnect.php';
 
 
-$sql = "select * from recipes where Type <> \"Chef's Special\" order by CreatedDate desc";
+$sql = "select * from recipes where Type <> \"Chef's Special\" order by CreatedDate desc ";
 
 $resultSet = mysqli_query($link, $sql);
 
@@ -16,7 +16,7 @@ mysqli_close($link);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="device-mobile-optimized device-android device-phone device-webkit device-chrome">
 
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,7 @@ mysqli_close($link);
 
 
   <link rel="stylesheet" media="all" rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-
+  <link rel="stylesheet" media="all" rel="stylesheet" type="text/css" href="css/animate.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
@@ -97,26 +97,39 @@ mysqli_close($link);
   <section class="recipe-section layer">
 
     <div class="container">
-      <div class="row mb-1 p-3">
-        <h2 class="display-4 recipe-section-title">Latest Recipes</h2>
+      <div class="row mb-1 ">
+        <div class="col-md-6">
+          <h2 class="display-4 recipe-section-title">Latest Recipes</h2>
+        </div>
+
+
       </div>
-      <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-between">
+
+      <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-between  justify-content-lg-start">
 
         <?php
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 6; $i++) {
           $row = mysqli_fetch_assoc($resultSet);
+
+          // print_r($row);
 
           ?>
 
           <?php
-            include 'card_temp.php';
+            if (!empty($row))
+              include 'card_temp.php';
             ?>
 
         <?php
         }
         ?>
 
+      </div>
 
+      <div class="row justify-content-center justify-content-sm-center justify-content-md-center ">
+      <div class="col-6 col-md-6 col-lg-6  ">
+          <a href= "view_all_recipes.php" type="button" class="btn btn-login " style="width: 100%;font-size : 20px;">View all recipes</a>
+        </div>
       </div>
     </div>
 
@@ -157,6 +170,9 @@ mysqli_close($link);
           $(this).removeClass('shadow-lg1');
         }
       );
+
+
+
 
       // document ready  
     });

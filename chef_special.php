@@ -63,14 +63,14 @@ if (isset($_SESSION['Name'])) {
 
     <section class="chef-special-content">
 
-        <div class="container text-center justify-content-center justify-content-sm-between justify-content-md-between">
+        <div class="layer3 container ">
 
-            <div class="row mb-1 p-3">
+            <div class="row  mb-1 p-3">
                 <h2 class="display-4 recipe-section-title">Chef's Special Recipes</h2>
             </div>
 
 
-            <div class="row">
+            <div class="row text-center justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-start">
 
                 <?php
 
