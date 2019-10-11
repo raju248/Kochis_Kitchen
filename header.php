@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-blue fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
 
       <div class="logo">
-
-        
         <span><i class="fa fa-cutlery fa-2x"></i></span>
-        <a href="index.php"><h2 style="color:white" class="brand-name">Kochi's Kitchen</h2></a>
+        <h2 style="color:white" class="brand-name">Kochi's Kitchen</h2>
 
       </div>
 
